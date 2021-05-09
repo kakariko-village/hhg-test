@@ -57,7 +57,9 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "no-alert": "off",
+    "no-console": "off"
   },
   "settings": {
     "import/resolver": {
