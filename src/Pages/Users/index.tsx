@@ -51,11 +51,11 @@ function UsersPage() {
   const handleSubmit = async (values: usersObject) => {
     setIsLoading(true);
     try {
+      setShowModal(false);
       const res = await axios.post(
         `${process.env.REACT_APP_API_EP}users`,
         values
       );
-      setShowModal(false);
       if (res.status === 200 || res.status === 201) {
         await fetchAllUsers();
       } else {
@@ -71,7 +71,7 @@ function UsersPage() {
     fetchAllUsers();
   }, []);
   return (
-    <div className="user-table__wrapper">
+    <div className="user-table__wrapper fadeIn">
       <Col span={24}>
         <h1>Table</h1>
       </Col>

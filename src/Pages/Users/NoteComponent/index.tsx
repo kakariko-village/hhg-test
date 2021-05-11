@@ -5,7 +5,11 @@ const { Panel } = Collapse;
 
 function NoteComponent() {
   return (
-    <Collapse bordered={false} style={{ marginBottom: 20 }}>
+    <Collapse
+      bordered={false}
+      style={{ marginBottom: 20 }}
+      defaultActiveKey={['1']}
+    >
       <Panel header={<strong>Read this:</strong>} key="1">
         <p>
           I am using <strong>mockapi.io</strong> but this site has some
@@ -21,7 +25,7 @@ function NoteComponent() {
           <li>
             Second, <strong>Mockapi.io</strong> built-in sorting query also does
             not work well. I have tried sorting data by <strong>id</strong> and{' '}
-            <strong>creatAt</strong> but they both sorted data incorrectly.
+            <strong>createAt</strong> but they both sorted data incorrectly.
           </li>
         </ol>
         <p>
