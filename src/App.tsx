@@ -1,6 +1,8 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import './App.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import { Row, Col } from 'antd';
+import Header from './Components/Header';
 import CounterPage from './Pages/Counter';
 import UsersPage from './Pages/Users';
 
@@ -8,27 +10,20 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div>
-          <ul>
-            <li>
-              <Link to="/counter">Counter</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
+        <Header />
+        <div className="main-content">
+          <Switch>
+            <Route path="/counter">
+              <CounterPage />
+            </Route>
+            <Route path="/users">
+              <UsersPage />
+            </Route>
+            <Route path="/">
+              <CounterPage />
+            </Route>
+          </Switch>
         </div>
-        <Switch>
-          <Route path="/counter">
-            <CounterPage />
-          </Route>
-          <Route path="/users">
-            <UsersPage />
-          </Route>
-          <Route path="/">
-            <CounterPage />
-          </Route>
-        </Switch>
       </div>
     </Router>
   );
