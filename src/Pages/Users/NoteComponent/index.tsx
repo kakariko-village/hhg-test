@@ -12,7 +12,7 @@ function NoteComponent() {
     >
       <Panel header={<strong>Read this:</strong>} key="1">
         <p>
-          I am using <strong>mockapi.io</strong> but this site has some
+          I am using <strong>mockapi.io</strong> but this site has some big
           drawbacks:
         </p>
         <ol>
@@ -27,12 +27,16 @@ function NoteComponent() {
             not work well. I have tried sorting data by <strong>id</strong> and{' '}
             <strong>createAt</strong> but they both sorted data incorrectly.
           </li>
+          <li>
+            Finally, GET and POST API from <strong>Mockapi.io</strong> always
+            return success code 200 and 201 so I do not make any function for
+            errors handling.
+          </li>
         </ol>
         <p>
-          Because of the issues above, I get all data and use pagination of Ant
-          Design table. If you want to test me about how to make functional
-          pagination with limit and offset, you can send me another tests with
-          working APIs
+          Because of those issues above, I chose this approach: get all data
+          from API, sort data in Frontend and use pagination of Ant Design
+          table.
         </p>
       </Panel>
     </Collapse>
